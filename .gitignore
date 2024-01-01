@@ -163,6 +163,7 @@ cython_debug/
 # Selenium 
 chromedriver-win32/
 chromedriver.exe
+LICENSE.chromedriver
 
 # Config
 config.py
