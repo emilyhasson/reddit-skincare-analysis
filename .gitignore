@@ -161,6 +161,7 @@ cython_debug/
 
 
 # Selenium 
+chromedriver-win32/
 chromedriver.exe
 
 # Config
