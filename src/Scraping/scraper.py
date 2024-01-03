@@ -2,7 +2,7 @@ from selenium import webdriver
 import pandas as pd
 import praw
 from praw.models import MoreComments
-import config.py
+import config
 
 
 # Scraping with PRAW
