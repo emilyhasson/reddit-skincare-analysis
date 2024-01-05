@@ -21,7 +21,7 @@ for submission in reddit.subreddit('SkincareAddiction').hot(limit=5):
 headlines_df = pd.DataFrame(headlines, columns=['Title', 'URL'])
 
 # Display the DataFrame
-print(headlines_df)
+# print(headlines_df)
 
 
 
@@ -45,28 +45,28 @@ for url in urls:
     comments_df = pd.concat([comments_df, posts_df], ignore_index=True)
     # print(posts)
 
-print(comments_df)
+# print(comments_df)
 
 # AWS
 
-# from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession
 
-# # Assuming you have Pandas DataFrames: pandas_article_df and pandas_comment_df
+# Assuming you have Pandas DataFrames: pandas_article_df and pandas_comment_df
 
-# # Create a Spark session
-# spark = SparkSession.builder \
-#     .appName("Pandas to PySpark") \
-#     .getOrCreate()
+# Create a Spark session
+spark = SparkSession.builder \
+    .appName("Pandas to PySpark") \
+    .getOrCreate()
 
-# # Convert Pandas DataFrames to PySpark DataFrames
-# spark_article_df = spark.createDataFrame(pandas_article_df)
-# spark_comment_df = spark.createDataFrame(pandas_comment_df)
+# Convert Pandas DataFrames to PySpark DataFrames
+spark_headlines_df = spark.createDataFrame(headlines_df)
+spark_comments_df = spark.createDataFrame(comments_df)
 
-# # Show the PySpark DataFrames
-# spark_article_df.show()
-# spark_comment_df.show()
+# Show the PySpark DataFrames
+spark_headlines_df.show()
+spark_comments_df.show()
 
-# # Perform any PySpark operations on the DataFrames if needed
+# Perform any PySpark operations on the DataFrames if needed
 
-# # Stop the Spark session
-# spark.stop()
+# Stop the Spark session
+spark.stop()
