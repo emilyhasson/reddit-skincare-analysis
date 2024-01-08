@@ -56,6 +56,7 @@ from pyspark.sql import SparkSession
 # Create a Spark session
 spark = SparkSession.builder \
     .appName("Pandas to PySpark") \
+    .config("spark.executorEnv.PYTHON_EXECUTABLE", r"C:\Users\emily\AppData\Local\Programs\Python\Python311\python.exe") \
     .getOrCreate()
 
 # Convert Pandas DataFrames to PySpark DataFrames
